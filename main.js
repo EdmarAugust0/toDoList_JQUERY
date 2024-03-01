@@ -6,14 +6,14 @@ $(document).ready(function() {
     $('form').on('submit', function(e) {
         e.preventDefault();
         const nomeNovaTask = $('#newTask').val();
-        const novaLi = $('<li class="item"></li>')
+        const novaLi = $('<li class="item" id="completeTask"></li>')
         $(`<p>${nomeNovaTask}</p>`).appendTo(novaLi)
 
         $(novaLi).appendTo('ul')
         $('#newTask').val('')
     })
 
-    $(document).on('click', 'li', function() {
+    $(document).on('click', '#completeTask', function() {
         $(this).toggleClass("feito")
     })
 })
